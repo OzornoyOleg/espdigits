@@ -3,10 +3,32 @@ const wordDigit = document.querySelector('.main__digit')
 const input = document.querySelector('.form__input')
 const spaceY = 'y '
 
+const animateButton = function(e) {
+
+    e.preventDefault;
+    //reset animation
+    e.target.classList.remove('animate');
+    
+    e.target.classList.add('animate');
+    setTimeout(function(){
+      e.target.classList.remove('animate');
+    },700);
+  };
+  
+  var bubblyButtons = document.getElementsByClassName("bubbly-button");
+  
+  for (var i = 0; i < bubblyButtons.length; i++) {
+    bubblyButtons[i].addEventListener('click', animateButton, false);
+  }
+
 
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+    if (input.value > 2999) {
+        wordDigit.textContent = "Число должно быть в диапазоне от 1000 до 2999"
+        return
+    }
     wordDigit.textContent = thousandWord(input.value) + ' ' + hundredWord(input.value) + ' ' + dozensWord(input.value) + ' ' + onesWord(input.value)
 })
 
