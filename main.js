@@ -28,6 +28,8 @@ form.addEventListener('submit', (e) => {
     if (input.value > 2999) {
         wordDigit.textContent = "Число должно быть в диапазоне от 1000 до 2999"
         return
+    } else if (!input.value) {
+        wordDigit.textContent = "Даша, ты забыла ввести число"
     }
     wordDigit.textContent = thousandWord(input.value) + ' ' + hundredWord(input.value) + ' ' + dozensWord(input.value) + ' ' + onesWord(input.value)
 })
