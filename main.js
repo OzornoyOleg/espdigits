@@ -26,7 +26,7 @@ const animateButton = function(e) {
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     if (input.value > 2999) {
-        wordDigit.textContent = "Число должно быть в диапазоне от 1000 до 2999"
+        wordDigit.textContent = "Даша, число должно быть в диапазоне от 1000 до 2999"
         return
     } else if (!input.value) {
         wordDigit.textContent = "Даша, ты забыла ввести число"
