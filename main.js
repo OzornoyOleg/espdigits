@@ -15,9 +15,9 @@ const animateButton = function(e) {
     },700);
   };
   
-  var bubblyButtons = document.getElementsByClassName("bubbly-button");
+  const bubblyButtons = document.getElementsByClassName("bubbly-button");
   
-  for (var i = 0; i < bubblyButtons.length; i++) {
+  for (let i = 0; i < bubblyButtons.length; i++) {
     bubblyButtons[i].addEventListener('click', animateButton, false);
   }
 
@@ -26,8 +26,10 @@ const animateButton = function(e) {
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     if (input.value > 2999) {
-        wordDigit.textContent = "Даша, число должно быть в диапазоне от 1000 до 2999"
+        wordDigit.textContent = "Даша, число слишком большое, оно должно быть меньше 2999"
         return
+    } else if (input.value < 1000) {
+        wordDigit.textContent = "Даша, число слишком маленькое, оно должно быть больше 1000"
     } else if (!input.value) {
         wordDigit.textContent = "Даша, ты забыла ввести число"
     } else {
