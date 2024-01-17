@@ -30,8 +30,9 @@ form.addEventListener('submit', (e) => {
         return
     } else if (!input.value) {
         wordDigit.textContent = "Даша, ты забыла ввести число"
-    }
+    } else {
     wordDigit.textContent = thousandWord(input.value) + ' ' + hundredWord(input.value) + ' ' + dozensWord(input.value) + ' ' + onesWord(input.value)
+    }
 })
 
 function thousandWord (digit) {
